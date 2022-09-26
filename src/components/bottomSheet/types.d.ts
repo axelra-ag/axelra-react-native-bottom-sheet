@@ -295,6 +295,7 @@ export interface BottomSheetProps
    */
   $modal?: boolean;
   //#endregion
+  customIndicatorComponent?: React.ReactNode;
 }
 
 export interface BottomSheetAnimationConfigs {

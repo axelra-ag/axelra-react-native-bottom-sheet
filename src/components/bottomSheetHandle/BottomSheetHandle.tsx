@@ -6,6 +6,7 @@ import type { BottomSheetDefaultHandleProps } from './types';
 const BottomSheetHandleComponent = ({
   style,
   indicatorStyle: _indicatorStyle,
+  customIndicatorComponent,
   children,
 }: BottomSheetDefaultHandleProps) => {
   // styles
@@ -24,7 +25,7 @@ const BottomSheetHandleComponent = ({
   // render
   return (
     <Animated.View style={containerStyle}>
-      <Animated.View style={indicatorStyle} />
+      {customIndicatorComponent ?? <Animated.View style={indicatorStyle} />}
       {children}
     </Animated.View>
   );

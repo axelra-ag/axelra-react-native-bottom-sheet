@@ -24,4 +24,9 @@ export interface BottomSheetDefaultHandleProps extends BottomSheetHandleProps {
    * @default undefined
    */
   children?: React.ReactNode | React.ReactNode[];
+
+  /**
+   *
+   */
+  customIndicatorComponent: React.ReactNode;
 }

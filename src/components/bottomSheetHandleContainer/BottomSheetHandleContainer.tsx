@@ -19,6 +19,7 @@ function BottomSheetHandleContainerComponent({
   handleComponent: _providedHandleComponent,
   handleStyle: _providedHandleStyle,
   handleIndicatorStyle: _providedIndicatorStyle,
+  customIndicatorComponent,
 }: BottomSheetHandleContainerProps) {
   //#region hooks
   const {
@@ -103,6 +104,7 @@ function BottomSheetHandleContainerComponent({
           animatedPosition={animatedPosition}
           style={_providedHandleStyle}
           indicatorStyle={_providedIndicatorStyle}
+          customIndicatorComponent={customIndicatorComponent}
         />
       </Animated.View>
     </PanGestureHandler>

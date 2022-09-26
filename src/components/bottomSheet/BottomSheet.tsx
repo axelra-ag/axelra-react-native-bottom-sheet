@@ -156,6 +156,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
       backgroundComponent,
       footerComponent,
       children: Content,
+      customIndicatorComponent,
     } = props;
     //#endregion
 
@@ -1635,6 +1636,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
                   handleComponent={handleComponent}
                   handleStyle={_providedHandleStyle}
                   handleIndicatorStyle={_providedHandleIndicatorStyle}
+                  customIndicatorComponent={customIndicatorComponent}
                 />
               </Animated.View>
               {/* <BottomSheetDebugView
