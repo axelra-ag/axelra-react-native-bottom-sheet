@@ -24,7 +24,7 @@ const BottomSheetHandleComponent = ({
 
   // render
   return (
-    <Animated.View style={containerStyle}>
+    <Animated.View style={customIndicatorComponent ? {} : containerStyle}>
       {customIndicatorComponent ?? <Animated.View style={indicatorStyle} />}
       {children}
     </Animated.View>
