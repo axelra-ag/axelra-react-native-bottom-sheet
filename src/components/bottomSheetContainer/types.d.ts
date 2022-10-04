@@ -10,6 +10,6 @@ export interface BottomSheetContainerProps
   containerHeight: Animated.SharedValue<number>;
   containerOffset: Animated.SharedValue<Insets>;
   shouldCalculateHeight?: boolean;
-  style?: StyleProp<ViewStyle>;
+  style?: StyleProp<Animated.AnimateStyle<StyleProp<ViewStyle>>>;
   children: ReactNode;
 }

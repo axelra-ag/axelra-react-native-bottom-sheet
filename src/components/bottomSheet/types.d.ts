@@ -164,11 +164,11 @@ export interface BottomSheetProps
 
   //#region styles
   /**
-   * View style to be applied to the container.
+   * Animated View style to be applied to the container.
    * @type ViewStyle
    * @default undefined
    */
-  containerStyle?: StyleProp<ViewStyle>;
+  containerStyle?: StyleProp<AnimateStyle<StyleProp<ViewStyle>>>;
   /**
    * View style to be applied to the sheet container component,
    * it also could be an Animated Style.

@@ -1,15 +1,15 @@
 import React, { memo, useCallback, useMemo, useRef } from 'react';
-import {
-  LayoutChangeEvent,
-  StatusBar,
-  StyleProp,
-  View,
-  ViewStyle,
-} from 'react-native';
+import Animated from 'react-native-reanimated';
 import { WINDOW_HEIGHT } from '../../constants';
 import { print } from '../../utilities';
 import { styles } from './styles';
 import type { BottomSheetContainerProps } from './types';
+import {
+  LayoutChangeEvent,
+  StatusBar,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 
 function BottomSheetContainerComponent({
   containerHeight,
@@ -21,9 +21,11 @@ function BottomSheetContainerComponent({
   style,
   children,
 }: BottomSheetContainerProps) {
-  const containerRef = useRef<View>(null);
+  const containerRef = useRef<Animated.View>(null);
   //#region styles
-  const containerStyle = useMemo<StyleProp<ViewStyle>>(
+  const containerStyle = useMemo<
+    StyleProp<Animated.AnimateStyle<StyleProp<ViewStyle>>>
+  >(
     () => [
       style,
       styles.container,
@@ -74,11 +76,12 @@ function BottomSheetContainerComponent({
 
   //#region render
   return (
-    <View
+    <Animated.View
       ref={containerRef}
+      // @ts-ignore
+      style={containerStyle}
       pointerEvents="box-none"
       onLayout={shouldCalculateHeight ? handleContainerLayout : undefined}
-      style={containerStyle}
       children={children}
     />
   );
