@@ -2,12 +2,22 @@ import React, { memo, useMemo } from 'react';
 import Animated from 'react-native-reanimated';
 import { styles } from './styles';
 import type { BottomSheetDefaultHandleProps } from './types';
+import {
+  DEFAULT_ACCESSIBLE,
+  DEFAULT_ACCESSIBILITY_ROLE,
+  DEFAULT_ACCESSIBILITY_LABEL,
+  DEFAULT_ACCESSIBILITY_HINT,
+} from './constants';
 
 const BottomSheetHandleComponent = ({
   style,
   indicatorStyle: _indicatorStyle,
   customIndicatorComponent,
   children,
+  accessible = DEFAULT_ACCESSIBLE,
+  accessibilityRole = DEFAULT_ACCESSIBILITY_ROLE,
+  accessibilityLabel = DEFAULT_ACCESSIBILITY_LABEL,
+  accessibilityHint = DEFAULT_ACCESSIBILITY_HINT,
 }: BottomSheetDefaultHandleProps) => {
   // styles
   const containerStyle = useMemo(
@@ -24,7 +34,13 @@ const BottomSheetHandleComponent = ({
 
   // render
   return (
-    <Animated.View style={customIndicatorComponent ? {} : containerStyle}>
+    <Animated.View
+      style={customIndicatorComponent ? {} : containerStyle}
+      accessible={accessible ?? undefined}
+      accessibilityRole={accessibilityRole ?? undefined}
+      accessibilityLabel={accessibilityLabel ?? undefined}
+      accessibilityHint={accessibilityHint ?? undefined}
+    >
       {customIndicatorComponent ?? <Animated.View style={indicatorStyle} />}
       {children}
     </Animated.View>
