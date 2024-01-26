@@ -1,0 +1,10 @@
+import { memo } from 'react';
+import { FlatList as RNFlatList, } from 'react-native';
+import Animated from 'react-native-reanimated';
+import { SCROLLABLE_TYPE } from '../../constants';
+import { createBottomSheetScrollableComponent } from './createBottomSheetScrollableComponent';
+const AnimatedFlatList = Animated.createAnimatedComponent(RNFlatList);
+const BottomSheetFlatListComponent = createBottomSheetScrollableComponent(SCROLLABLE_TYPE.FLATLIST, AnimatedFlatList);
+const BottomSheetFlatList = memo(BottomSheetFlatListComponent);
+BottomSheetFlatList.displayName = 'BottomSheetFlatList';
+export default BottomSheetFlatList;

@@ -1,4 +1,4 @@
-import type React from 'react';
+import type React, { ReactNode } from 'react';
 import type { ViewStyle, Insets, StyleProp } from 'react-native';
 import type {
   SharedValue,
@@ -285,6 +285,7 @@ export interface BottomSheetProps
    * @type React.ReactNode
    */
   children: React.ReactNode;
+  customIndicatorComponent: React.ReactNode;
   //#endregion
 
   //#region private
@@ -293,6 +294,7 @@ export interface BottomSheetProps
    * @type boolean
    */
   $modal?: boolean;
+
   //#endregion
 }
 
