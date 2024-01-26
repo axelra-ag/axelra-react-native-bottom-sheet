@@ -41,7 +41,7 @@ const BottomSheetHandleComponent = ({
       accessibilityLabel={accessibilityLabel ?? undefined}
       accessibilityHint={accessibilityHint ?? undefined}
     >
-      {customIndicatorComponent ?? <Animated.View style={indicatorStyle} />}
+      <Animated.View style={indicatorStyle} />
       {children}
     </Animated.View>
   );
